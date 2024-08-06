@@ -1,21 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Modal: any = ({ active, setActive, children, bgColor }) => {
+const Modal: any = ({ modalActive, setModalActive, setUserModalClosed, children, bgColor }) => {
 
-    if(!active){
+    if(!modalActive){
         return null;
     }
 
     const handleClick = (e) => {
-        e.target === e.currentTarget && setActive(false);
+        e.target === e.currentTarget && setModalActive(false);
+        setUserModalClosed(true);
     }
 
     return (
         <Wrapper bg_color={bgColor} onClick={(e) => handleClick(e)}>
             <section className='popup_container'>
                 <div className="popup_box_container">
-                    <button className='close_button' onClick={() => setActive(false)}>X</button>
+                    <button className='close_button' onClick={() => {setModalActive(false); setUserModalClosed(true)}}>X</button>
                     {children}
                 </div>
             </section>
