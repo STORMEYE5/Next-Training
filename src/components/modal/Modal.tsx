@@ -9,14 +9,14 @@ const Modal: any = ({ modalActive, setModalActive, setUserModalClosed, children,
 
     const handleClick = (e) => {
         e.target === e.currentTarget && setModalActive(false);
-        setUserModalClosed(true);
+        setUserModalClosed && setUserModalClosed(true);
     }
 
     return (
         <Wrapper bg_color={bgColor} onClick={(e) => handleClick(e)}>
             <section className='popup_container'>
                 <div className="popup_box_container">
-                    <button className='close_button' onClick={() => {setModalActive(false); setUserModalClosed(true)}}>X</button>
+                    <button className='close_button' onClick={() => {setModalActive(false); setUserModalClosed && setUserModalClosed(true)}}>X</button>
                     {children}
                 </div>
             </section>

@@ -2,7 +2,6 @@
 
 import Modal from "@components/modal/Modal";
 import "./page.css"
-import { useRef, useState } from "react";
 import useModalToggleClick from "../../hooks/useModalToggleClick";
 const Home = () => {
 
