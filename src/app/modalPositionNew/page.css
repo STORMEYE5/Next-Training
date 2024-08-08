@@ -20,7 +20,9 @@ img,
 }
 
 body {
+  position: relative !important;
   font-family: Rethink Sans;
+  z-index: 1;
 }
 
 .display-1 {
